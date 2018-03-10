@@ -18,9 +18,9 @@ const apiArtesania = () => {
 apiArtesania();
 */
 
-/*
-const apiArtesania = () => {
-    fetch(`https://api.mercadolibre.com/users/226384143/`)
+
+const apiMercadolibre = () => {
+    fetch(`https://api.mercadolibre.com/users/306970587/`)
         .then(function(response) {
             response.json().then(function(result) {
                 console.log(result);
@@ -31,8 +31,8 @@ const apiArtesania = () => {
         });
 };
 
-apiArtesania();
-*/
+apiMercadolibre();
+
 form.addEventListener('submit', function(e){
     e.preventDefault();
     responseContainer.innerHTML="";
