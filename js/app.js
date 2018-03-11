@@ -71,13 +71,13 @@ const paintItems = (result) => {
         <div class="card">
             <div class="card-image">
                 <img src="${image}">
-                <span class="card-title">${item.title}</span>
-            </div>
+                </div>
             <div class="card-content">
+                <h3 class="card-title">${item.title}</h3>
                 <p>${item.price} MXN</p>
             </div>
             <div class="card-action">
-                <p href="#"></p>
+                <button id="" class="btn waves-effect" type="" name="action">Agregar a carrito</button>
             </div>
         </div>
     </div>`
