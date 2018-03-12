@@ -4,10 +4,10 @@ $(document).ready(function(){
 
 const form=document.getElementById('search-form');
 const searchField=document.getElementById('search-key-word');
-const responseContainer=document.getElementsByClassName('response-container');
-/*
-const apiArtesania = () => {
-    fetch(`https://api.mercadolibre.com/sites/MLM/trends/search?category=MLM1574`)
+const responseContainer=document.getElementById('response-container');
+
+const booksCall = () => {
+    fetch(`https://api.mercadolibre.com/sites/MLM/search?category=MLM3025`)
         .then(function(response) {
             response.json().then(function(result) {
                 console.log(result);
@@ -19,8 +19,41 @@ const apiArtesania = () => {
 };
 
 
-apiArtesania();
-*/
+booksCall();
+
+
+const musicCall = () => {
+    fetch(`https://api.mercadolibre.com/sites/MLM/search?category=MLM1168`)
+    .then(function(response) {
+        response.json().then(function(result) {
+            console.log(result);
+    });
+})
+    .catch(function(err) {
+        console.log(err);
+    });
+};
+
+
+
+
+musicCall();
+
+const hobbiesCall = () => {
+    fetch(`https://api.mercadolibre.com/sites/MLM/search?category=MLM1798`)
+        .then(function(response) {
+            response.json().then(function(result) {
+                console.log(result);
+        });
+    })
+        .catch(function(err) {
+            console.log(err);
+        });
+};
+
+
+hobbiesCall();
+
 
 
 const apiMercadolibre = () => {
@@ -47,7 +80,7 @@ const apiLoad = () => {
     fetch(`https://api.mercadolibre.com/sites/MLM/search?q=${searchedForText}`, )
         .then(function(response) {
             response.json().then(function(result) {
-                console.log(result.results);
+               // console.log(result.results);
                 paintItems(result.results)
 
         });
