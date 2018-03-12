@@ -8,7 +8,7 @@ const searchField=document.getElementById('search-key-word');
 const responseContainer=document.getElementsByClassName('response-container');
 
 const booksCall = () => {
-    fetch(`https://cors-anywhere.herokuapp.com/https://api.mercadolibre.com/sites/MLM/search?category=MLM3025`)
+    fetch(`https://api.mercadolibre.com/sites/MLM/search?category=MLM3025`)
 
         .then(function(response) {
             response.json().then(function(result) {
