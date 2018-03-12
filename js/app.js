@@ -6,11 +6,9 @@ const form=document.getElementById('search-form');
 const searchField=document.getElementById('search-key-word');
 
 const responseContainer=document.getElementsByClassName('response-container');
-const carCounter = document.getElementById('items-counter');
-let counter = 0;
-/*
-const apiArtesania = () => {
-    fetch(`https://api.mercadolibre.com/sites/MLM/trends/search?category=MLM1574`)
+
+const booksCall = () => {
+    fetch(`https://cors-anywhere.herokuapp.com/https://api.mercadolibre.com/sites/MLM/search?category=MLM3025`)
 
         .then(function(response) {
             response.json().then(function(result) {
@@ -27,7 +25,7 @@ booksCall();
 
 
 const musicCall = () => {
-    fetch(`https://api.mercadolibre.com/sites/MLM/search?category=MLM1168`)
+    fetch(`https://cors-anywhere.herokuapp.com/https://api.mercadolibre.com/sites/MLM/search?category=MLM1168`)
     .then(function(response) {
         response.json().then(function(result) {
             console.log(result);
@@ -44,7 +42,7 @@ const musicCall = () => {
 musicCall();
 
 const hobbiesCall = () => {
-    fetch(`https://api.mercadolibre.com/sites/MLM/search?category=MLM1798`)
+    fetch(`https://cors-anywhere.herokuapp.com/https://api.mercadolibre.com/sites/MLM/search?category=MLM1798`)
         .then(function(response) {
             response.json().then(function(result) {
                 console.log(result);
