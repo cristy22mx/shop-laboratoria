@@ -41,6 +41,38 @@ const apiLoad = () => {
         });
 };
 
+const paintItems = (result) => {
+    
+    
+    let containerProducts = document.getElementById('site-container');
+    let templateProducts = ``;
+   
+     result.forEach((item) => {
+        
+        const addres=item.address.state_name;
+         const image=item.thumbnail;
+        templateProducts += `<div class="col s12 m3">
+        <div class="card">
+            <div class="card-image">
+                <img src="${image}">
+            </div>
+            <div class="card-content">
+                <p class="card-title short-text">${item.title}</p>
+                <p class="">${item.price} MXN</p>
+            </div>
+            <div class="card-action">
+                <button id="" onclick="changeButtonStatus(event)" class="btn waves-effect" type="" name="action">Agregar a carrito</button>
+            </div>
+        </div>
+    </div>`
+    
+//console.log(available);
+         
+     });
+
+     containerProducts.innerHTML = templateProducts;
+    
+}
 
 
 const categoriesCall = (category) => {
@@ -91,7 +123,25 @@ const musica=document.getElementById("musica").addEventListener("click", functio
       
      categoriesCall(codeSeries);
    })
- 
+
+   const codeBooks="MLM1196"
+   const books=document.getElementById("books").addEventListener("click", function(e){
+       
+      categoriesCall(codeBooks);
+    })
+
+    const codeComics="MLM3043"
+    const comics=document.getElementById("comics").addEventListener("click", function(e){
+        
+       categoriesCall(codeComics);
+     })
+     
+     const codeMag="MLM8227"
+     const magazines=document.getElementById("mag").addEventListener("click", function(e){
+         
+        categoriesCall(codeMag);
+      })
+  
 
 
 
@@ -122,38 +172,7 @@ const changeButtonStatus = event => {
     }
 }
 
-const paintItems = (result) => {
-    
-    
-    let containerProducts = document.getElementById('site-container');
-    let templateProducts = ``;
-   
-     result.forEach((item) => {
-        
-        const addres=item.address.state_name;
-         const image=item.thumbnail;
-        templateProducts += `<div class="col s12 m3">
-        <div class="card">
-            <div class="card-image">
-                <img src="${image}">
-            </div>
-            <div class="card-content">
-                <p class="card-title short-text">${item.title}</p>
-                <p class="">${item.price} MXN</p>
-            </div>
-            <div class="card-action">
-                <button id="" onclick="changeButtonStatus(event)" class="btn waves-effect" type="" name="action">Agregar a carrito</button>
-            </div>
-        </div>
-    </div>`
-    
-//console.log(available);
-         
-     });
 
-     containerProducts.innerHTML = templateProducts;
-    
-}
 
 
 //https://api.mercadolibre.com/sites/MLM/search?category=MLM7841   peliculas
