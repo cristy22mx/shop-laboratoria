@@ -1,0 +1,13 @@
+/* clases para acoortar el texto */
+.short-text {
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow: ellipsis;
+}
+
+.short-text:hover {
+    width: auto;
+    white-space: initial;
+    overflow:visible;
+    cursor: pointer;
+}

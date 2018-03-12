@@ -4,10 +4,14 @@ $(document).ready(function(){
 
 const form=document.getElementById('search-form');
 const searchField=document.getElementById('search-key-word');
+
 const responseContainer=document.getElementsByClassName('response-container');
+const carCounter = document.getElementById('items-counter');
+let counter = 0;
 /*
 const apiArtesania = () => {
     fetch(`https://api.mercadolibre.com/sites/MLM/trends/search?category=MLM1574`)
+
         .then(function(response) {
             response.json().then(function(result) {
                 console.log(result);
@@ -19,12 +23,45 @@ const apiArtesania = () => {
 };
 
 
-apiArtesania();
-*/
+booksCall();
+
+
+const musicCall = () => {
+    fetch(`https://api.mercadolibre.com/sites/MLM/search?category=MLM1168`)
+    .then(function(response) {
+        response.json().then(function(result) {
+            console.log(result);
+    });
+})
+    .catch(function(err) {
+        console.log(err);
+    });
+};
+
+
+
+
+musicCall();
+
+const hobbiesCall = () => {
+    fetch(`https://api.mercadolibre.com/sites/MLM/search?category=MLM1798`)
+        .then(function(response) {
+            response.json().then(function(result) {
+                console.log(result);
+        });
+    })
+        .catch(function(err) {
+            console.log(err);
+        });
+};
+
+
+hobbiesCall();
+
 
 
 const apiMercadolibre = () => {
-    fetch(`https://api.mercadolibre.com/users/306970587/`)
+    fetch(`https://cors-anywhere.herokuapp.com/https://api.mercadolibre.com/users/306970587/`)
         .then(function(response) {
             response.json().then(function(result) {
                 console.log(result);
@@ -44,10 +81,10 @@ form.addEventListener('submit', function(e){
    apiLoad();
 })
 const apiLoad = () => {
-    fetch(`https://api.mercadolibre.com/sites/MLM/search?q=${searchedForText}`, )
+    fetch(`https://cors-anywhere.herokuapp.com/https://api.mercadolibre.com/sites/MLM/search?q=${searchedForText}`, )
         .then(function(response) {
             response.json().then(function(result) {
-                console.log(result.results);
+               // console.log(result.results);
                 paintItems(result.results)
 
         });
@@ -56,6 +93,31 @@ const apiLoad = () => {
             console.log(err);
         });
 };
+
+const increaseCounter = () => {
+  counter += 1;
+  carCounter.innerText = counter;
+  console.log(counter);
+}
+
+const decreaseCounter = () => {
+  counter -= 1;
+  carCounter.innerText = counter;
+  console.log(counter);
+}
+
+const changeButtonStatus = event => {
+    let element = event.target
+    let buttonText = element.firstChild.data;
+
+    if(buttonText === "Agregar a carrito") {
+        element.innerText = "Remover del carrito";
+        increaseCounter();
+    } else {
+        element.innerText = "Agregar a carrito";
+        decreaseCounter();
+    }
+}
 
 const paintItems = (result) => {
     
@@ -71,13 +133,13 @@ const paintItems = (result) => {
         <div class="card">
             <div class="card-image">
                 <img src="${image}">
-                </div>
+            </div>
             <div class="card-content">
-                <h3 class="card-title">${item.title}</h3>
-                <p>${item.price} MXN</p>
+                <p class="card-title short-text">${item.title}</p>
+                <p class="">${item.price} MXN</p>
             </div>
             <div class="card-action">
-                <button id="" class="btn waves-effect" type="" name="action">Agregar a carrito</button>
+                <button id="" onclick="changeButtonStatus(event)" class="btn waves-effect" type="" name="action">Agregar a carrito</button>
             </div>
         </div>
     </div>`
