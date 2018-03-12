@@ -4,10 +4,10 @@ $(document).ready(function(){
 
 const form=document.getElementById('search-form');
 const searchField=document.getElementById('search-key-word');
-const responseContainer=document.getElementById('response-container');
+const responseContainer=document.getElementsByClassName('response-container');
 
 const booksCall = () => {
-    fetch(`https://api.mercadolibre.com/sites/MLM/search?category=MLM3025`)
+    fetch(`https://cors-anywhere.herokuapp.com/https://api.mercadolibre.com/sites/MLM/search?category=MLM3025`)
         .then(function(response) {
             response.json().then(function(result) {
                 console.log(result);
@@ -23,7 +23,7 @@ booksCall();
 
 
 const musicCall = () => {
-    fetch(`https://api.mercadolibre.com/sites/MLM/search?category=MLM1168`)
+    fetch(`https://cors-anywhere.herokuapp.com/https://api.mercadolibre.com/sites/MLM/search?category=MLM1168`)
     .then(function(response) {
         response.json().then(function(result) {
             console.log(result);
@@ -40,7 +40,7 @@ const musicCall = () => {
 musicCall();
 
 const hobbiesCall = () => {
-    fetch(`https://api.mercadolibre.com/sites/MLM/search?category=MLM1798`)
+    fetch(`https://cors-anywhere.herokuapp.com/https://api.mercadolibre.com/sites/MLM/search?category=MLM1798`)
         .then(function(response) {
             response.json().then(function(result) {
                 console.log(result);
@@ -57,7 +57,7 @@ hobbiesCall();
 
 
 const apiMercadolibre = () => {
-    fetch(`https://api.mercadolibre.com/users/306970587/`)
+    fetch(`https://cors-anywhere.herokuapp.com/https://api.mercadolibre.com/users/306970587/`)
         .then(function(response) {
             response.json().then(function(result) {
                 console.log(result);
@@ -77,7 +77,7 @@ form.addEventListener('submit', function(e){
    apiLoad();
 })
 const apiLoad = () => {
-    fetch(`https://api.mercadolibre.com/sites/MLM/search?q=${searchedForText}`, )
+    fetch(`https://cors-anywhere.herokuapp.com/https://api.mercadolibre.com/sites/MLM/search?q=${searchedForText}`, )
         .then(function(response) {
             response.json().then(function(result) {
                // console.log(result.results);
