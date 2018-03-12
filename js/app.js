@@ -4,10 +4,12 @@ $(document).ready(function(){
 
 const form=document.getElementById('search-form');
 const searchField=document.getElementById('search-key-word');
+
 const responseContainer=document.getElementsByClassName('response-container');
 
 const booksCall = () => {
     fetch(`https://cors-anywhere.herokuapp.com/https://api.mercadolibre.com/sites/MLM/search?category=MLM3025`)
+
         .then(function(response) {
             response.json().then(function(result) {
                 console.log(result);
@@ -90,6 +92,31 @@ const apiLoad = () => {
         });
 };
 
+const increaseCounter = () => {
+  counter += 1;
+  carCounter.innerText = counter;
+  console.log(counter);
+}
+
+const decreaseCounter = () => {
+  counter -= 1;
+  carCounter.innerText = counter;
+  console.log(counter);
+}
+
+const changeButtonStatus = event => {
+    let element = event.target
+    let buttonText = element.firstChild.data;
+
+    if(buttonText === "Agregar a carrito") {
+        element.innerText = "Remover del carrito";
+        increaseCounter();
+    } else {
+        element.innerText = "Agregar a carrito";
+        decreaseCounter();
+    }
+}
+
 const paintItems = (result) => {
     
     
@@ -110,7 +137,7 @@ const paintItems = (result) => {
                 <p class="">${item.price} MXN</p>
             </div>
             <div class="card-action">
-                <button id="" class="btn waves-effect" type="" name="action">Agregar a carrito</button>
+                <button id="" onclick="changeButtonStatus(event)" class="btn waves-effect" type="" name="action">Agregar a carrito</button>
             </div>
         </div>
     </div>`
