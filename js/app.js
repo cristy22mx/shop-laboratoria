@@ -4,7 +4,6 @@ $(document).ready(function(){
 
 const form=document.getElementById('search-form');
 const searchField=document.getElementById('search-key-word');
-
 const responseContainer=document.getElementsByClassName('response-container');
 const carCounter = document.getElementById('items-counter');
 let counter = 0;
@@ -49,7 +48,7 @@ const apiMercadolibre = () => {
     fetch(`https://cors-anywhere.herokuapp.com/https://api.mercadolibre.com/users/306970587/`)
         .then(function(response) {
             response.json().then(function(result) {
-                console.log(result);
+//console.log(result);
         });
     })
         .catch(function(err) {
@@ -79,39 +78,18 @@ const apiLoad = () => {
         });
 };
 
+
+let productsArray = [];
 const addToCar = (id, title, price) => {
-    let productsArray = [];
-    let templateProduct = ` `; 
-    templateProduct += `
-    <tr>
-        <td>
-            <div class="card horizontal">
-                <div class="card-image">
-                    <img src="https://lorempixel.com/100/190/nature/6">
-                </div>
-                <div class="card-stacked">
-                    <div class="card-content">
-                        <h5 class="card-title">${title}</h5>
-                        <p>Código del Artículo:</p>
-                        <p>Disponible:</p>
-                        <p>Cantidad:</p>
-                    </div>
-                    <div class="card-action">
-                        <a class="bnt" >Eliminar</a>
-                        <a class="bnt" >Editar</a>
-                    </div>
-                </div>
-            </div>
-        </td>   
-        <td class = "final-price right-align">${price}</td>
-    </tr>`
+    let product = {
+        productName: title,
+        productPrice: price
+    }
 
-    console.log(templateProduct);
-
-    let productDetails = templateProduct;
+    let productDetails = product;
 
     productsArray.push(productDetails);
-
+    console.log(productsArray);
     localStorage.setItem('productDetails', JSON.stringify(productsArray));
 }
 
@@ -164,7 +142,6 @@ const paintItems = (result) => {
             </div>
             <div class="card-action">
                 <button data-id="${id}" data-title="${item.title}" data-price="${item.price}" onclick="changeButtonStatus(event)" class="btn waves-effect" type="" name="action">Agregar a carrito</button>
-            }
             </div>
         </div>
     </div>`
@@ -177,3 +154,77 @@ const paintItems = (result) => {
     
 }
 
+
+const categoriesCall = (category) => {
+    fetch(`https://cors-anywhere.herokuapp.com/https://api.mercadolibre.com/sites/MLM/search?category=${category}`)
+        .then(function(response) {
+            response.json().then(function(result) {
+                paintItems(result.results)
+                console.log("hola");
+        });
+    })
+        .catch(function(err) {
+            console.log(err);
+        });
+};
+
+const codeAccion="MLM3422";
+const action=document.getElementById("actionFigures").addEventListener("click", function(e){
+   
+  categoriesCall(codeAccion);
+})
+
+const codeHotWheels="MLM3398";
+const hot=document.getElementById("tazos").addEventListener("click", function(e){
+    
+   categoriesCall(codeHotWheels);
+ })
+
+const codeStarWars="MLM2661";
+const star=document.getElementById("starWars").addEventListener("click", function(e){
+    
+   categoriesCall(codeStarWars);
+ })
+
+const codeMusic="MLM7809"
+const musica=document.getElementById("musica").addEventListener("click", function(e){
+    
+   categoriesCall(codeMusic);
+ })
+
+ const codeMovies="MLM7841"
+ const movies=document.getElementById("movies").addEventListener("click", function(e){
+     
+    categoriesCall(codeMovies);
+  })
+
+  const codeSeries="MLM6217"
+  const series=document.getElementById("series").addEventListener("click", function(e){
+      
+     categoriesCall(codeSeries);
+   })
+
+   const codeBooks="MLM1196"
+   const books=document.getElementById("books").addEventListener("click", function(e){
+       
+      categoriesCall(codeBooks);
+    })
+
+    const codeComics="MLM3043"
+    const comics=document.getElementById("comics").addEventListener("click", function(e){
+        
+       categoriesCall(codeComics);
+     })
+     
+     const codeMag="MLM8227"
+     const magazines=document.getElementById("mag").addEventListener("click", function(e){
+         
+        categoriesCall(codeMag);
+      })
+
+
+
+
+//https://api.mercadolibre.com/sites/MLM/search?category=MLM7841   peliculas
+//https://api.mercadolibre.com/sites/MLM/search?category=MLM6217 series
+// https://api.mercadolibre.com/sites/MLM/search?category=MLM7809 musica
