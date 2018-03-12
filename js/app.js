@@ -4,70 +4,14 @@ $(document).ready(function(){
 
 const form=document.getElementById('search-form');
 const searchField=document.getElementById('search-key-word');
-
 const responseContainer=document.getElementsByClassName('response-container');
-
-
-const booksCall = () => {
-    fetch(`https://cors-anywhere.herokuapp.com/https://api.mercadolibre.com/sites/MLM/search?category=MLM3025`)
-
-        .then(function(response) {
-            response.json().then(function(result) {
-                console.log(result);
-                paintItems(result.results)
-        });
-    })
-        .catch(function(err) {
-            console.log(err);
-        });
-};
-
-const libros=document.getElementById("libros").addEventListener("click", booksCall);
-
-
-
-
-const musicCall = () => {
-    fetch(`https://cors-anywhere.herokuapp.com/https://api.mercadolibre.com/sites/MLM/search?category=MLM1168`)
-    .then(function(response) {
-        response.json().then(function(result) {
-            paintItems(result.results)
-            console.log(result);
-    });
-})
-    .catch(function(err) {
-        console.log(err);
-    });
-};
-
-
-const musica=document.getElementById("musica").addEventListener("click", musicCall);
-
-
-
-const hobbiesCall = () => {
-    fetch(`https://cors-anywhere.herokuapp.com/https://api.mercadolibre.com/sites/MLM/search?category=MLM1798`)
-        .then(function(response) {
-            response.json().then(function(result) {
-                paintItems(result.results)
-                console.log(result);
-        });
-    })
-        .catch(function(err) {
-            console.log(err);
-        });
-};
-
-
-const hobbies=document.getElementById("collection").addEventListener("click", hobbiesCall);
-
 
 
 const apiMercadolibre = () => {
     fetch(`https://cors-anywhere.herokuapp.com/https://api.mercadolibre.com/users/306970587/`)
         .then(function(response) {
             response.json().then(function(result) {
-                console.log(result);
+//console.log(result);
         });
     })
         .catch(function(err) {
@@ -96,6 +40,62 @@ const apiLoad = () => {
             console.log(err);
         });
 };
+
+
+
+const categoriesCall = (category) => {
+    fetch(`https://cors-anywhere.herokuapp.com/https://api.mercadolibre.com/sites/MLM/search?category=${category}`)
+        .then(function(response) {
+            response.json().then(function(result) {
+                paintItems(result.results)
+                console.log("hola");
+        });
+    })
+        .catch(function(err) {
+            console.log(err);
+        });
+};
+
+const codeAccion="MLM3422";
+const action=document.getElementById("actionFigures").addEventListener("click", function(e){
+   
+  categoriesCall(codeAccion);
+})
+
+const codeHotWheels="MLM3398";
+const hot=document.getElementById("tazos").addEventListener("click", function(e){
+    
+   categoriesCall(codeHotWheels);
+ })
+
+const codeStarWars="MLM2661";
+const star=document.getElementById("starWars").addEventListener("click", function(e){
+    
+   categoriesCall(codeStarWars);
+ })
+
+const codeMusic="MLM7809"
+const musica=document.getElementById("musica").addEventListener("click", function(e){
+    
+   categoriesCall(codeMusic);
+ })
+
+ const codeMovies="MLM7841"
+ const movies=document.getElementById("movies").addEventListener("click", function(e){
+     
+    categoriesCall(codeMovies);
+  })
+
+  const codeSeries="MLM6217"
+  const series=document.getElementById("series").addEventListener("click", function(e){
+      
+     categoriesCall(codeSeries);
+   })
+ 
+
+
+
+
 
 const increaseCounter = () => {
   counter += 1;
@@ -155,3 +155,7 @@ const paintItems = (result) => {
     
 }
 
+
+//https://api.mercadolibre.com/sites/MLM/search?category=MLM7841   peliculas
+//https://api.mercadolibre.com/sites/MLM/search?category=MLM6217 series
+// https://api.mercadolibre.com/sites/MLM/search?category=MLM7809 musica
