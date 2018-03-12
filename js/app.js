@@ -82,12 +82,13 @@ const apiLoad = () => {
 let productsArray = [];
 const addToCar = (id, title, price) => {
     let product = {
+        productId: id,
         productName: title,
         productPrice: price
     }
 
     let productDetails = product;
-
+    console.log(productDetails);
     productsArray.push(productDetails);
     console.log(productsArray);
     localStorage.setItem('productDetails', JSON.stringify(productsArray));
