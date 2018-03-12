@@ -9,7 +9,7 @@ const responseContainer=document.getElementsByClassName('response-container');
 
 
 const booksCall = () => {
-    fetch(`https://api.mercadolibre.com/sites/MLM/search?category=MLM3025`)
+    fetch(`https://cors-anywhere.herokuapp.com/https://api.mercadolibre.com/sites/MLM/search?category=MLM3025`)
 
         .then(function(response) {
             response.json().then(function(result) {
