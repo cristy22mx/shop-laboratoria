@@ -1,3 +1,7 @@
+$(document).ready(function(){
+    $('.carousel').carousel();
+  });
+
 const form=document.getElementById('search-form');
 const searchField=document.getElementById('search-key-word');
 const responseContainer=document.getElementById('response-container');
@@ -20,15 +24,17 @@ booksCall();
 
 const musicCall = () => {
     fetch(`https://api.mercadolibre.com/sites/MLM/search?category=MLM1168`)
-        .then(function(response) {
-            response.json().then(function(result) {
-                console.log(result);
-        });
-    })
-        .catch(function(err) {
-            console.log(err);
-        });
+    .then(function(response) {
+        response.json().then(function(result) {
+            console.log(result);
+    });
+})
+    .catch(function(err) {
+        console.log(err);
+    });
 };
+
+
 
 
 musicCall();
@@ -94,18 +100,20 @@ const paintItems = (result) => {
         
         const addres=item.address.state_name;
          const image=item.thumbnail;
-        templateProducts += `<div class="col s6 m3" data-url="">
-        <div class="card waves">
-            <div class= "card-content center-align circle">
-                <h1 > ${item.title}</h1>
-                <img class="responsive-img center" src="${image}">
-                <p>Price: ${item.price} MXN</p>
-                <p>Place: ${addres}</p>
-                <p>Available cuantity: ${item.available_quantity}</p>
-                <p>Seller status: ${item.seller.power_seller_status}</p>
-               
+        templateProducts += `<div class="col s12 m3">
+        <div class="card">
+            <div class="card-image">
+                <img src="${image}">
+                </div>
+            <div class="card-content">
+                <h3 class="card-title">${item.title}</h3>
+                <p>${item.price} MXN</p>
             </div>
-        </div>`; 
+            <div class="card-action">
+                <button id="" class="btn waves-effect" type="" name="action">Agregar a carrito</button>
+            </div>
+        </div>
+    </div>`
     
 //console.log(available);
          
