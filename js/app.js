@@ -2,6 +2,23 @@ $(document).ready(function(){
     $('.carousel').carousel();
   });
 
+
+  const apiLoadFirst = () => {
+    fetch(`https://cors-anywhere.herokuapp.com/https://api.mercadolibre.com/sites/MLM/search?q=peliculas`, )
+        .then(function(response) {
+            response.json().then(function(result) {
+               // console.log(result.results);
+                paintItems(result.results)
+
+        });
+    })
+        .catch(function(err) {
+            console.log(err);
+        });
+};
+
+apiLoadFirst()
+
 const form=document.getElementById('search-form');
 const searchField=document.getElementById('search-key-word');
 const responseContainer=document.getElementsByClassName('response-container');
