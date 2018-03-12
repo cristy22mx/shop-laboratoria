@@ -7,12 +7,14 @@ const searchField=document.getElementById('search-key-word');
 
 const responseContainer=document.getElementsByClassName('response-container');
 
+
 const booksCall = () => {
     fetch(`https://api.mercadolibre.com/sites/MLM/search?category=MLM3025`)
 
         .then(function(response) {
             response.json().then(function(result) {
                 console.log(result);
+                paintItems(result.results)
         });
     })
         .catch(function(err) {
@@ -20,14 +22,16 @@ const booksCall = () => {
         });
 };
 
+const libros=document.getElementById("libros").addEventListener("click", booksCall);
 
-booksCall();
+
 
 
 const musicCall = () => {
     fetch(`https://cors-anywhere.herokuapp.com/https://api.mercadolibre.com/sites/MLM/search?category=MLM1168`)
     .then(function(response) {
         response.json().then(function(result) {
+            paintItems(result.results)
             console.log(result);
     });
 })
@@ -37,14 +41,15 @@ const musicCall = () => {
 };
 
 
+const musica=document.getElementById("musica").addEventListener("click", musicCall);
 
 
-musicCall();
 
 const hobbiesCall = () => {
     fetch(`https://cors-anywhere.herokuapp.com/https://api.mercadolibre.com/sites/MLM/search?category=MLM1798`)
         .then(function(response) {
             response.json().then(function(result) {
+                paintItems(result.results)
                 console.log(result);
         });
     })
@@ -54,7 +59,7 @@ const hobbiesCall = () => {
 };
 
 
-hobbiesCall();
+const hobbies=document.getElementById("collection").addEventListener("click", hobbiesCall);
 
 
 
