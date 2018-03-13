@@ -39,22 +39,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link href="css/memenu.css" rel="stylesheet" type="text/css" media="all" />
 <script type="text/javascript" src="js/memenu.js"></script>
 <script>$(document).ready(function(){$(".memenu").memenu();});</script>				
+<!-- our css -->
+<link rel="stylesheet" href="css/main.css">
 </head>
 <body> 
 	<!--top-header-->
-	<div class="top-header">
+<div class="top-header">
 	<div class="container">
 		<div class="top-header-main">
 			<!-- id Form. Habia un forma aqui -->
 			<form id="search-form">
 				<div class="col-md-4 top-header-left">
 					<div class="search-bar">
-						<input type="text" value="Search" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}">
+						<input id="search-key-word" type="text" value="Search" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}">
 						<!-- id boton de busqueda -->
 						<input id="submit-btn" type="submit" value="">
-						<button id="submit-btn" type="submit" name="action">
-							<!-- <i class="material-icons">search</i> -->
-						</button>
 					</div>
 				</div>
 			</form>
@@ -66,9 +65,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="cart box_1">
 						<a href="checkout.html">
 						<h3> <div class="total">
-							<span class="simpleCart_total"></span> (<span id="simpleCart_quantity" id="items-counter" class="simpleCart_quantity"></span> items)</div>
+							<span></span> (<span id="items-counter"></span> items)</div>
 							<img src="images/cart-1.png" alt="" />
+							<!-- <span class="simpleCart_total"></span> (<span id="simpleCart_quantity" id="items-counter" class="simpleCart_quantity"></span> items)</div>
+							<img src="images/cart-1.png" alt="" /> -->
 						</a>
+						<!-- vacias carrito -->
 						<p><a href="javascript:;" class="simpleCart_empty">Empty Cart</a></p>
 						<div class="clearfix"> </div>
 				</div>
@@ -83,7 +85,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="container">
 			<div class="top-nav">
 				<ul class="memenu skyblue"><li class="active"><a href="index.html">Home</a></li>
-					<li id="libros" class="grid"><a href="#">Libros</a>
+					<li id="libros" class="grid"><a href="#">Lectura</a>
 						<div class="mepanel">
 							<div class="row">
 								<div class="col1 me-one">
@@ -96,12 +98,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							</div>
 						</div>
 					</li>
-					<li id="comics" class="grid"><a href="#">Comics</a>
+					<li id="comics" class="grid"><a href="#">Música</a>
 						<div class="mepanel">
 							<div class="row">
 								<div class="col1 me-one">
 									<ul>
-										<li id="musica"><a href="#">Música</a></li>
+										<li id="musica"><a href="#">Audios</a></li>
 										<li id="movies"><a href="#">Películas</a></li>
 										<li id="series"><a href="#">Series</a></li>
 									</ul>
@@ -109,7 +111,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							</div>
 						</div>
 					</li>
-					<li id="mag" class="grid"><a href="#">Revistas</a>
+					<li id="mag" class="grid"><a href="#">Coleccionables</a>
 						<div class="mepanel">
 							<div class="row">
 								<div class="col1 me-one">
@@ -135,12 +137,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			    <li>
 					<div class="banner-1"></div>
 				</li>
-				<!-- <li>
+				<li>
 					<div class="banner-2"></div>
 				</li>
 				<li>
 					<div class="banner-3"></div>
-				</li> -->
+				</li>
 			</ul>
 		</div>
 		<div class="clearfix"> </div>
@@ -183,7 +185,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							</div>
 						</div>
 						<div class="bnr-right"> 
-							<a href="single.html"><img src="images/b-1.jpg" alt="" /></a>
+							<a href="single.html"><img src="images/oferta.png" alt="" /></a>
 						</div>
 						<div class="clearfix"> </div>
 					</div>
@@ -212,7 +214,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="shoes"> 
 		<div class="container"> 
 			<div id="site-container" class="product-one">
-				<div class="col-md-3 product-left"> 
+				<!-- <div class="col-md-3 product-left"> 
 					<div class="p-one simpleCart_shelfItem">							
 							<a href="single.html">
 								<img src="images/shoes-1.png" alt="" />
@@ -224,8 +226,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<p><a class="item_add" href="#"><i></i> <span class=" item_price">$329</span></a></p>
 					
 					</div>
-				</div>
-				<div class="col-md-3 product-left"> 
+				</div> -->
+				<!-- <div class="col-md-3 product-left"> 
 					<div class="p-one simpleCart_shelfItem">
 						
 						<a href="single.html">
@@ -266,7 +268,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<p><a class="item_add" href="#"><i></i> <span class=" item_price">$329</span></a></p>
 						
 					</div>
-				</div>
+				</div> -->
 				<div class="clearfix"> </div>
 			</div>
 			<!-- <div class="product-one">
@@ -334,7 +336,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<!--start-abt-shoe-->
 	<div class="abt-shoe">
 		<div class="container"> 
-			<div class="abt-shoe-main">
+				<a href="#"><img src="images/mes-libro.jpg" alt="" /></a>
+			<!-- <div class="abt-shoe-main">
 				<div class="col-md-4 abt-shoe-left">
 					<div class="abt-one">
 						<a href="single.html"><img src="images/abt-1.jpg" alt="" /></a>
@@ -355,7 +358,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<h4><a href="single.html">Cras dolor ligula</a></h4>
 						<p>Phasellus auctor vulputate egestas. Nulla facilisi. Cras dolor ligula, pharetra vitae efficitur ac, tempus vitae nisl. Aliquam erat volutpat. </p>
 					</div>
-				</div>
+				</div> -->
 				<div class="clearfix"> </div>
 			</div>
 		</div>

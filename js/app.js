@@ -75,7 +75,7 @@ const apiMercadolibre = () => {
 
 apiMercadolibre();
 
-form.addEventListener('submit', function(e){
+form.addEventListener('keyup', function(e){
     e.preventDefault();
     responseContainer.innerHTML="";
     searchedForText=searchField.value;
@@ -156,9 +156,9 @@ const paintItems = (result) => {
                         <span>Quick View</span>
                     </div>
                 </a>
-            <h4>${item.title}</h4>
-            <p><a class="item_add" href="#"><i></i> <span class=" item_price">${item.price}</span></a></p>
-            <button data-id="${id}" data-title="${item.title}" data-price="${item.price}" onclick="changeButtonStatus(event)" class="btn waves-effect" type="" name="action">Agregar a carrito</button>
+            <h4 class="short-text">${item.title}</h4>
+            <p><a href="#"><i></i> <span class="item_price">${item.price} MXN</span></a></p>
+            <button class="item_add single-but" data-id="${id}" data-title="${item.title}" data-price="${item.price}" onclick="changeButtonStatus(event)" type="" name="action">Agregar a carrito</button>
         </div>
     </div>
         `
