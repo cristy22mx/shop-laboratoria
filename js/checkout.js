@@ -5,6 +5,13 @@ let itemContainer = document.getElementById('items');
 let resume = document.getElementById('shopping-resume');
 
 
+const removeCard = (event, id) => {
+    console.log(event.target.parentNode.parentNode.parentNode.id);
+    let cardToRemove = event.target.offsetParent.offsetParent.offsetParent;
+    // console.log(id);
+    cardToRemove.innerHTML = " ";
+}
+
 let totalPrice = 0;
 let shippingCost = 3.76;
 const showResume = total => {
@@ -45,9 +52,10 @@ const calculateTotal = productDetails => {
 
   productDetails.forEach(product => {
     totalPrice += parseInt(product.productPrice);
+    
     tableTemplate += `<tr>
                         <td>
-                            <div class="card horizontal">
+                            <div id="${product.productId}" class="card horizontal">
                                 <div class="card-image">
                                     <img src="https://lorempixel.com/100/100/nature/6">
                                 </div>
@@ -56,18 +64,23 @@ const calculateTotal = productDetails => {
                                         <h5 class="card-title">${product.productName}</h5>
                                         <p>Código del Artículo:</p>
                                         <p>Disponible:</p>
-                                        <p>Cantidad:</p>
+                                        <p>Precio: $ ${product.productPrice}</p>
                                     </div>
                                         <div class="card-action">
-                                            <a class="bnt" >Eliminar</a>
+                                            <button class="bnt">Eliminar</button>
                                         </div>
                                 </div>
                             </div>
-                        </td>   
-                        <td class = "final-price right-align">$${product.productPrice}</td>
+                        </td>
                     </tr>`
     itemContainer.innerHTML = tableTemplate;
-  })
+    })
+    let boton = document.getElementsByClassName('bnt');
+    let btnCollection = Array.from(boton);
+    btnCollection.forEach(item => {
+        item.addEventListener('click', removeCard);
+    })
+
   showResume(totalPrice);
 }
 
