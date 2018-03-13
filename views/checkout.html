@@ -1,193 +1,471 @@
+<!--A Design by W3layouts 
+Author: W3layout
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <script src="https://www.paypalobjects.com/api/checkout.js"></script>
+<title>Free Style A Ecommerce Category Flat Bootstarp Resposive Website Template | Checkout :: w3layouts</title>
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="js/jquery-1.11.0.min.js"></script>
+<!-- Custom Theme files -->
+<!--theme-style-->
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />	
+<!--//theme-style-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Free Style Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!--fonts-->
+<link href='http://fonts.googleapis.com/css?family=Alegreya+Sans+SC:100,300,400,500,700,800,900,100italic,300italic,400italic,500italic,700italic,800italic,900italic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+<!--//fonts-->
+<script type="text/javascript" src="js/move-top.js"></script>
+<script type="text/javascript" src="js/easing.js"></script>
+<script type="text/javascript">
+					jQuery(document).ready(function($) {
+						$(".scroll").click(function(event){		
+							event.preventDefault();
+							$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+						});
+					});
+				</script>	
+<!-- start menu -->
+<script src="js/simpleCart.min.js"> </script>
+<link href="css/memenu.css" rel="stylesheet" type="text/css" media="all" />
+<script type="text/javascript" src="js/memenu.js"></script>
+<script>$(document).ready(function(){$(".memenu").memenu();});</script>				
 </head>
-<body>
-    <nav>
-        <div class="nav-wrapper row">
-            <div class="col m2">
-                <a href="#" class="brand-logo">Logo</a>
-            </div> 
-            <div class="col m8">
-                <form id="search-form" class="row">
-                    <div class="input-field col m10">
-                        <input placeholder="" id="search-key-word" type="text" required>
-                        <label class="label-icon" for="search-key-word"><i class="material-icons">search</i></label>
-                    </div>
-                    <button id="submit-btn" class="btn waves-effect waves-light" type="submit" name="action">Buscar
-                        <i class="material-icons">search</i>
-                    </button>
-                </form>
-            </div>
 
-            <ul id="nav-mobile" class="right hide-on-med-and-down col m2">
-                <li><a href=""><i class="material-icons">shopping_cart<span class="badge">13</span></i></a></li>
-                <li><a href="../index.html"><i class="material-icons">sentiment_very_satisfied</i></a></li>
-
-            </ul>
-        </div>
-    </nav>
-    <section class="container">
-        <section class="row">
-            <a href="views/index.html"><u> &#60;Seguir comprando </u></a>
-        </section>
-        <section id="categories" class="row">
-                    <!-- Dropdown Trigger -->
-            <div class="col m2">
-                <a class='dropdown-button btn' href='#' data-activates='category-1'>Categoria 1</a>
-            </div>
-            <div class="col m2">
-                <a class='dropdown-button btn' href='#' data-activates='category-2'>Categoria 2</a>
-            </div>
-            <div class="col m2">
-                <a class='dropdown-button btn' href='#' data-activates='category-3'>Categoria 3</a>
-            </div>
-                <!-- Dropdown Categoria 1 -->
-            <ul id='category-1' class='dropdown-content'>
-                <li><a href="#!">one</a></li>
-                <li><a href="#!">two</a></li>
-                <li class="divider"></li>
-                <li><a href="#!">three</a></li>
-            </ul>
-    
-            <!-- Dropdown Categoria 2 -->
-            <ul id='category-2' class='dropdown-content'>
-                <li><a href="#!">uno</a></li>
-                <li><a href="#!">dos</a></li>
-                <li class="divider"></li>
-                <li><a href="#!">tres</a></li>
-            </ul>
-                <!-- Dropdown Categoria 3 -->
-            <ul id='category-3' class='dropdown-content'>
-                <li><a href="#!">un</a></li>
-                <li><a href="#!">deux</a></li>
-                <li class="divider"></li>
-                <li><a href="#!">trois</a></li>
-            </ul>
-        </section>
-        <section class="row">
-            <table id="shopping-cart" class="col m7 ">
-                <thead>
-                    <tr>
-                        <th>
-                            <h3>Mi carrito de Compra</h3>
-                        </th>
-                    </tr>
-                </thead>
-                <tbody id="items">
-                    <!-- <tr>
-                        <td>
-                            <div class="card horizontal">
-                                <div class="card-image">
-                                    <img src="https://lorempixel.com/100/190/nature/6">
-                                </div>
-                                <div class="card-stacked">
-                                    <div class="card-content">
-                                        <h5 class="card-title">Producto</h5>
-                                        <p>Código del Artículo:</p>
-                                        <p>Disponible:</p>
-                                        <p>Cantidad:</p>
-                                    </div>
-                                        <div class="card-action">
-                                            <a class="bnt" >Eliminar</a>
-                                            <a class="bnt" >Editar</a>
-                                        </div>
-                                </div>
-                            </div>
-                        </td>   
-                        <td class = "final-price right-align">$20,000.87</td>
-                    </tr>
-                    <tr> -->
-                        <!-- <td>
-                            <div class="card horizontal">
-                                <div class="card-image">
-                                    <img src="https://lorempixel.com/100/190/nature/6">
-                                </div>
-                                <div class="card-stacked">
-                                    <div class="card-content">
-                                        <h5 class="card-title">Producto</h5>
-                                        <p>Código del Artículo:</p>
-                                        <p>Disponible:</p>
-                                        <p>Cantidad:</p>
-                                    </div>
-                                    <div class="card-action">
-                                        <a class="bnt" >Eliminar</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </td>   
-                        <td class ="final-price center-align">$000.87</td>
-                    </tr>     -->
-                </tbody>
-            </table>
-            <table id="shopping-resume" class = "col m4 offset-m1 fixed">
-                <!-- <thead>
-                    <tr>
-                        <th>
-                            <h3>Resumen</h3>
-                        </th>
-                    </tr>
-                </thead>
-            
-                <tbody>
-                    <tr>
-                        <td>SUBTOTAL:</td>
-                        <td>$0.87</td>
-                    </tr>
-                    <tr>
-                        <td>Costo de envío:</td>
-                        <td>$3.76</td>
-                    </tr>
-                    <tr>
-                        <td>TOTAL:</td>                        
-                        <td>$7.00</td>
-                    </tr>
-                    <tr>
-                        <td><div id="paypal-button"></div></td>                        
-                        
-                    </tr>
-                </tbody> -->
-            </table>
-        </section>
-        <footer class="page-footer">
-                <div class="container">
-                <div class="row">
-                    <div class="col l6 s12">
-                    <h5 class="white-text">Footer Content</h5>
-                    <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
-                    </div>
-                    <div class="col l4 offset-l2 s12">
-                    <h5 class="white-text">Links</h5>
-                    <ul>
-                        <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
-                    </ul>
-                    </div>
-                </div>
-                </div>
-                <div class="footer-copyright">
-                <div class="container">
-                © 2014 Copyright Text
-                <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
-                </div>
-                </div>
-            </footer>
-    </section>
-
-    <script src="../js/checkout.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+<body> 
+	<!--top-header-->
+	<div class="top-header">
+	<div class="container">
+		<div class="top-header-main">
+			<div class="col-md-4 top-header-left">
+				<div class="search-bar">
+					<input type="text" value="Search" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}">
+					<input type="submit" value="">
+				</div>
+			</div>
+			<div class="col-md-4 top-header-middle">
+				<a href="index.html"><img src="images/logo-4.png" alt="" /></a>
+			</div>
+			<div class="col-md-4 top-header-right">
+				<div class="cart box_1">
+						<a href="checkout.html">
+						<h3> <div class="total">
+							<span class="simpleCart_total"></span> (<span id="simpleCart_quantity" class="simpleCart_quantity"></span> items)</div>
+							<img src="images/cart-1.png" alt=""/></h3>
+						</a>
+						<p><a href="javascript:;" class="simpleCart_empty">Empty Cart</a></p>
+						<div class="clearfix"> </div>
+					</div>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+</div>
+<!--top-header-->
+<!--bottom-header-->
+	<div class="header-bottom">
+		<div class="container">
+			<div class="top-nav">
+				<ul class="memenu skyblue"><li class="active"><a href="index.html">Home</a></li>
+					<li class="grid"><a href="#">Men</a>
+						<div class="mepanel">
+							<div class="row">
+								<div class="col1 me-one">
+									<h4>Shop</h4>
+									<ul>
+										<li><a href="products.html">New Arrivals</a></li>
+										<li><a href="products.html">Men</a></li>
+										<li><a href="products.html">Women</a></li>
+										<li><a href="products.html">Accessories</a></li>
+										<li><a href="products.html">Kids</a></li>
+										<li><a href="products.html">login</a></li>
+										<li><a href="products.html">Brands</a></li>
+										<li><a href="products.html">My Shopping Bag</a></li>
+									</ul>
+								</div>
+								<div class="col1 me-one">
+									<h4>Style Zone</h4>
+									<ul>
+										<li><a href="products.html">Men</a></li>
+										<li><a href="products.html">Women</a></li>
+										<li><a href="products.html">Brands</a></li>
+										<li><a href="products.html">Kids</a></li>
+										<li><a href="products.html">Accessories</a></li>
+										<li><a href="products.html">Style Videos</a></li>
+									</ul>	
+								</div>
+								<div class="col1 me-one">
+									<h4>Popular Brands</h4>
+									<ul>
+										<li><a href="products.html">Levis</a></li>
+										<li><a href="products.html">Persol</a></li>
+										<li><a href="products.html">Nike</a></li>
+										<li><a href="products.html">Edwin</a></li>
+										<li><a href="products.html">New Balance</a></li>
+										<li><a href="products.html">Jack & Jones</a></li>
+										<li><a href="products.html">Paul Smith</a></li>
+										<li><a href="products.html">Ray-Ban</a></li>
+										<li><a href="products.html">Wood Wood</a></li>
+									</ul>	
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="grid"><a href="#">Women</a>
+						<div class="mepanel">
+							<div class="row">
+								<div class="col1 me-one">
+									<h4>Shop</h4>
+									<ul>
+										<li><a href="products.html">New Arrivals</a></li>
+										<li><a href="products.html">Men</a></li>
+										<li><a href="products.html">Women</a></li>
+										<li><a href="products.html">Accessories</a></li>
+										<li><a href="products.html">Kids</a></li>
+										<li><a href="products.html">login</a></li>
+										<li><a href="products.html">Brands</a></li>
+										<li><a href="products.html">My Shopping Bag</a></li>
+									</ul>
+								</div>
+								<div class="col1 me-one">
+									<h4>Style Zone</h4>
+									<ul>
+										<li><a href="products.html">Men</a></li>
+										<li><a href="products.html">Women</a></li>
+										<li><a href="products.html">Brands</a></li>
+										<li><a href="products.html">Kids</a></li>
+										<li><a href="products.html">Accessories</a></li>
+										<li><a href="products.html">Style Videos</a></li>
+									</ul>	
+								</div>
+								<div class="col1 me-one">
+									<h4>Popular Brands</h4>
+									<ul>
+										<li><a href="products.html">Levis</a></li>
+										<li><a href="products.html">Persol</a></li>
+										<li><a href="products.html">Nike</a></li>
+										<li><a href="products.html">Edwin</a></li>
+										<li><a href="products.html">New Balance</a></li>
+										<li><a href="products.html">Jack & Jones</a></li>
+										<li><a href="products.html">Paul Smith</a></li>
+										<li><a href="products.html">Ray-Ban</a></li>
+										<li><a href="products.html">Wood Wood</a></li>
+									</ul>	
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="grid"><a href="#">Kids</a>
+						<div class="mepanel">
+							<div class="row">
+								<div class="col1 me-one">
+									<h4>Shop</h4>
+									<ul>
+										<li><a href="products.html">New Arrivals</a></li>
+										<li><a href="products.html">Men</a></li>
+										<li><a href="products.html">Women</a></li>
+										<li><a href="products.html">Accessories</a></li>
+										<li><a href="products.html">Kids</a></li>
+										<li><a href="products.html">login</a></li>
+										<li><a href="products.html">Brands</a></li>
+										<li><a href="products.html">My Shopping Bag</a></li>
+									</ul>
+								</div>
+								<div class="col1 me-one">
+									<h4>Style Zone</h4>
+									<ul>
+										<li><a href="products.html">Men</a></li>
+										<li><a href="products.html">Women</a></li>
+										<li><a href="products.html">Brands</a></li>
+										<li><a href="products.html">Kids</a></li>
+										<li><a href="products.html">Accessories</a></li>
+										<li><a href="products.html">Style Videos</a></li>
+									</ul>	
+								</div>
+								<div class="col1 me-one">
+									<h4>Popular Brands</h4>
+									<ul>
+										<li><a href="products.html">Levis</a></li>
+										<li><a href="products.html">Persol</a></li>
+										<li><a href="products.html">Nike</a></li>
+										<li><a href="products.html">Edwin</a></li>
+										<li><a href="products.html">New Balance</a></li>
+										<li><a href="products.html">Jack & Jones</a></li>
+										<li><a href="products.html">Paul Smith</a></li>
+										<li><a href="products.html">Ray-Ban</a></li>
+										<li><a href="products.html">Wood Wood</a></li>
+									</ul>	
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="grid"><a href="#">Sports</a>
+						<div class="mepanel">
+							<div class="row">
+								<div class="col1 me-one">
+									<h4>Shop</h4>
+									<ul>
+										<li><a href="products.html">New Arrivals</a></li>
+										<li><a href="products.html">Men</a></li>
+										<li><a href="products.html">Women</a></li>
+										<li><a href="products.html">Accessories</a></li>
+										<li><a href="products.html">Kids</a></li>
+										<li><a href="products.html">login</a></li>
+										<li><a href="products.html">Brands</a></li>
+										<li><a href="products.html">My Shopping Bag</a></li>
+									</ul>
+								</div>
+								<div class="col1 me-one">
+									<h4>Style Zone</h4>
+									<ul>
+										<li><a href="products.html">Men</a></li>
+										<li><a href="products.html">Women</a></li>
+										<li><a href="products.html">Brands</a></li>
+										<li><a href="products.html">Kids</a></li>
+										<li><a href="products.html">Accessories</a></li>
+										<li><a href="products.html">Style Videos</a></li>
+									</ul>	
+								</div>
+								<div class="col1 me-one">
+									<h4>Popular Brands</h4>
+									<ul>
+										<li><a href="products.html">Levis</a></li>
+										<li><a href="products.html">Persol</a></li>
+										<li><a href="products.html">Nike</a></li>
+										<li><a href="products.html">Edwin</a></li>
+										<li><a href="products.html">New Balance</a></li>
+										<li><a href="products.html">Jack & Jones</a></li>
+										<li><a href="products.html">Paul Smith</a></li>
+										<li><a href="products.html">Ray-Ban</a></li>
+										<li><a href="products.html">Wood Wood</a></li>
+									</ul>	
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="grid"><a href="#">Brands</a>
+						<div class="mepanel">
+							<div class="row">
+								<div class="col1 me-one">
+									<h4>Shop</h4>
+									<ul>
+										<li><a href="products.html">New Arrivals</a></li>
+										<li><a href="products.html">Men</a></li>
+										<li><a href="products.html">Women</a></li>
+										<li><a href="products.html">Accessories</a></li>
+										<li><a href="products.html">Kids</a></li>
+										<li><a href="products.html">login</a></li>
+										<li><a href="products.html">Brands</a></li>
+										<li><a href="products.html">My Shopping Bag</a></li>
+									</ul>
+								</div>
+								<div class="col1 me-one">
+									<h4>Style Zone</h4>
+									<ul>
+										<li><a href="products.html">Men</a></li>
+										<li><a href="products.html">Women</a></li>
+										<li><a href="products.html">Brands</a></li>
+										<li><a href="products.html">Kids</a></li>
+										<li><a href="products.html">Accessories</a></li>
+										<li><a href="products.html">Style Videos</a></li>
+									</ul>	
+								</div>
+								<div class="col1 me-one">
+									<h4>Popular Brands</h4>
+									<ul>
+										<li><a href="products.html">Levis</a></li>
+										<li><a href="products.html">Persol</a></li>
+										<li><a href="products.html">Nike</a></li>
+										<li><a href="products.html">Edwin</a></li>
+										<li><a href="products.html">New Balance</a></li>
+										<li><a href="products.html">Jack & Jones</a></li>
+										<li><a href="products.html">Paul Smith</a></li>
+										<li><a href="products.html">Ray-Ban</a></li>
+										<li><a href="products.html">Wood Wood</a></li>
+									</ul>	
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+	<!--bottom-header-->
+	<!--start-breadcrumbs-->
+	<div class="breadcrumbs">
+		<div class="container">
+			<div class="breadcrumbs-main">
+				<ol class="breadcrumb">
+					<li><a href="index.html">Home</a></li>
+					<li class="active">Checkout</li>
+				</ol>
+			</div>
+		</div>
+	</div>
+	<!--end-breadcrumbs-->
+	<!--start-ckeckout-->
+	<div class="ckeckout">
+		<div class="container">
+			<div class="ckeckout-top">
+			<div class=" cart-items heading">
+			 <h3>My Shopping Bag (3)</h3>
+				<script>$(document).ready(function(c) {
+					$('.close1').on('click', function(c){
+						$('.cart-header').fadeOut('slow', function(c){
+							$('.cart-header').remove();
+						});
+						});	  
+					});
+			   </script>
+			<script>$(document).ready(function(c) {
+					$('.close2').on('click', function(c){
+						$('.cart-header1').fadeOut('slow', function(c){
+							$('.cart-header1').remove();
+						});
+						});	  
+					});
+			   </script>
+			   <script>$(document).ready(function(c) {
+					$('.close3').on('click', function(c){
+						$('.cart-header2').fadeOut('slow', function(c){
+							$('.cart-header2').remove();
+						});
+						});	  
+					});
+			   </script>
+				
+			<div class="in-check" >
+				<ul class="unit">
+					<li><span>Item</span></li>
+					<li><span>Product Name</span></li>		
+					<li><span>Unit Price</span></li>
+					<li><span>Stock Status</span></li>
+					<li> </li>
+					<div class="clearfix"> </div>
+				</ul>
+				<ul class="cart-header">
+					<div class="close1"> </div>
+						<li class="ring-in"><a href="single.html" ><img src="images/s-1.jpg" class="img-responsive" alt=""></a>
+						</li>
+						<li><span>Woo Dress</span></li>
+						<li><span>$ 290.00</span></li>
+						<li><span>In Stock</span></li>
+						<li> <a href="single.html" class="add-cart cart-check">ADD TO CART</a></li>
+					<div class="clearfix"> </div>
+				</ul>
+				<ul class=" cart-header1">
+					<div class="close2"> </div>
+						<li class="ring-in"><a href="single.html" ><img src="images/s-2.jpg" class="img-responsive" alt=""></a>
+						</li>
+						<li><span>Elliot Shoes</span></li>
+						<li><span>$ 300.00</span></li>
+						<li><span>In Stock</span></li>
+						<li> <a href="single.html" class="add-cart cart-check">ADD TO CART</a></li>
+						<div class="clearfix"> </div>
+				</ul>
+				<ul class="cart-header2">
+					<div class="close3"> </div>
+						<li class="ring-in"><a href="single.html" ><img src="images/s-4.jpg" class="img-responsive" alt=""></a>
+						</li>
+						<li><span>Woo Dress</span></li>
+						<li><span>$ 360.00</span></li>
+						<li><span>In Stock</span></li>
+						<li> <a href="single.html" class="add-cart cart-check">ADD TO CART</a></li>
+						<div class="clearfix"> </div>
+				</ul>
+			</div>
+			</div>  
+		 </div>
+		</div>
+	</div>
+	<!--end-ckeckout-->
+	<!--start-footer-->
+	<div class="footer">
+		<div class="container">
+			<div class="footer-top">
+				<div class="col-md-3 footer-left">
+					<h3>ABOUT US</h3>
+					<ul>
+						<li><a href="#">Who We Are</a></li>
+						<li><a href="contact.html">Contact Us</a></li>
+						<li><a href="#">Our Sites</a></li>
+						<li><a href="#">In The News</a></li>
+						<li><a href="#">Team</a></li>
+						<li><a href="#">Carrers</a></li>					 
+					</ul>
+				</div>
+				<div class="col-md-3 footer-left">
+					<h3>YOUR ACCOUNT</h3>
+					<ul>
+						<li><a href="account.html">Your Account</a></li>
+						<li><a href="#">Personal Information</a></li>
+						<li><a href="contact.html">Addresses</a></li>
+						<li><a href="#">Discount</a></li>
+						<li><a href="#">Track your order</a></li>					 					 
+					</ul>
+				</div>
+				<div class="col-md-3 footer-left">
+					<h3>CUSTOMER SERVICES</h3>
+					<ul>
+						<li><a href="#">FAQ</a></li>
+						<li><a href="#">Shipping</a></li>
+						<li><a href="#">Cancellation</a></li>
+						<li><a href="#">Returns</a></li>
+						<li><a href="#">Bulk Orders</a></li>
+						<li><a href="#">Buying Guides</a></li>					 
+					</ul>
+				</div>
+				<div class="col-md-3 footer-left">
+					<h3>CATEGORIES</h3>
+					<ul>
+						<li><a href="#">Sports Shoes</a></li>
+						<li><a href="#">Casual Shoes</a></li>
+						<li><a href="#">Formal Shoes</a></li>
+						<li><a href="#">Party Shoes</a></li>
+						<li><a href="#">Ethnic</a></li>				 
+					</ul>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+	<!--end-footer-->
+	<!--end-footer-text-->
+	<div class="footer-text">
+		<div class="container">
+			<div class="footer-main">
+				<p class="footer-class">© 2015 Free Style All Rights Reserved | Design by  <a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p>
+			</div>
+		</div>
+		<script type="text/javascript">
+									$(document).ready(function() {
+										/*
+										var defaults = {
+								  			containerID: 'toTop', // fading element id
+											containerHoverID: 'toTopHover', // fading element hover id
+											scrollSpeed: 1200,
+											easingType: 'linear' 
+								 		};
+										*/
+										
+										$().UItoTop({ easingType: 'easeOutQuart' });
+										
+									});
+								</script>
+		<a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+	</div>
+	<!--end-footer-text-->	
 
 </body>
 </html>

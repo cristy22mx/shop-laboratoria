@@ -75,7 +75,7 @@ const apiMercadolibre = () => {
 
 apiMercadolibre();
 
-form.addEventListener('submit', function(e){
+form.addEventListener('keyup', function(e){
     e.preventDefault();
     responseContainer.innerHTML="";
     searchedForText=searchField.value;
@@ -109,7 +109,7 @@ const addToCar = (id, title, price) => {
     productsArray.push(productDetails);
     console.log(productsArray);
     localStorage.setItem('productDetails', JSON.stringify(productsArray));
-}
+} 
 
 const increaseCounter = (id, title, price) => {
   counter += 1;
@@ -149,20 +149,34 @@ const paintItems = (result) => {
         const id = item.id;
         const addres=item.address.state_name;
         const image=item.thumbnail;
-        templateProducts += `<div class="col s12 m3">
-        <div class="card">
-            <div class="card-image">
-                <img src="${image}">
-            </div>
-            <div class="card-content">
-                <p class="card-title short-text">${item.title}</p>
-                <p class="">${item.price} MXN</p>
-            </div>
-            <div class="card-action">
-                <button data-id="${id}" data-title="${item.title}" data-price="${item.price}" onclick="changeButtonStatus(event)" class="btn waves-effect" type="" name="action">Agregar a carrito</button>
-            </div>
+        templateProducts += `<div class="col-md-3 product-left"> 
+        <div class="p-one simpleCart_shelfItem">							
+                <a href="single.html">
+                    <img src="${image}" alt="" />
+                    <div class="mask">
+                        <span>Quick View</span>
+                    </div>
+                </a>
+            <h4 class="short-text">${item.title}</h4>
+            <p><a href="#"><i></i> <span class="item_price">${item.price} MXN</span></a></p>
+            <button class="item_add single-but" data-id="${id}" data-title="${item.title}" data-price="${item.price}" onclick="changeButtonStatus(event)" type="" name="action">Agregar a carrito</button>
         </div>
-    </div>`
+    </div>
+        `
+    //     `<div class="col s12 m3">
+    //     <div class="card">
+    //         <div class="card-image">
+    //             <img src="${image}">
+    //         </div>
+    //         <div class="card-content">
+    //             <p class="card-title short-text">${item.title}</p>
+    //             <p class="">${item.price} MXN</p>
+    //         </div>
+    //         <div class="card-action">
+    //             <button data-id="${id}" data-title="${item.title}" data-price="${item.price}" onclick="changeButtonStatus(event)" class="btn waves-effect" type="" name="action">Agregar a carrito</button>
+    //         </div>
+    //     </div>
+    // </div>`
     
 //console.log(available);
          
@@ -178,7 +192,7 @@ const categoriesCall = (category) => {
         .then(function(response) {
             response.json().then(function(result) {
                 paintItems(result.results)
-                console.log("hola");
+                // console.log("hola");
         });
     })
         .catch(function(err) {
