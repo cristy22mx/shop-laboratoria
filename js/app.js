@@ -2,6 +2,7 @@ $(document).ready(function(){
     $('.carousel').carousel();
   });
 
+  
 
   const apiLoadFirst = () => {
     fetch(`https://cors-anywhere.herokuapp.com/https://api.mercadolibre.com/sites/MLM/search?q=peliculas`, )
@@ -25,7 +26,21 @@ const responseContainer=document.getElementsByClassName('response-container');
 const carCounter = document.getElementById('items-counter');
 let counter = 0;
 
+// function button fixed shop
 
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+    document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("main").style.marginLeft= "0";
+    document.body.style.backgroundColor = "white";
+}
+
+// end function button fixed shop
 
 const musicCall = () => {
     fetch(`https://api.mercadolibre.com/sites/MLM/search?category=MLM1168`)
