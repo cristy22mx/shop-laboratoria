@@ -12,6 +12,30 @@
     cursor: pointer;
 }
 
+
+/*Style text carousel*/
+
+.tex-banner{
+    background-color: #111;
+    opacity: 0.8;
+    color:whitesmoke;
+    text-align: center;
+    margin bottom :20px;
+
+}
+
+h3{
+    font-size: 4em;
+}
+
+h5{
+    font-size: 1.5em;
+    color:white;
+
+}
+
+/*End text carousel*/
+
 /* Start Style button fixed shop */
 body {
     font-family: "Lato", sans-serif;
@@ -20,16 +44,12 @@ body {
 
 .flotante {
     display:scroll;
-        position:fixed;
-        bottom:320px;
-        right:0px;
+    position:fixed;
+    bottom:320px;
+    right:0px;
+    z-index: 999;        
+    
 }
-
-/* #main > span > img{
-   
-    z-index: 999 !important;
-
-} */
 
 .sidenav {
     height: 100%;
